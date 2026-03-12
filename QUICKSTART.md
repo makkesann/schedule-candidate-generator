@@ -64,6 +64,24 @@
 
 ## トラブルシューティング
 
+### ⚠️ OAuth2 request failed: bad client id
+
+**このエラーが出た場合**: `manifest.json`のクライアントIDを確認してください。
+
+`extension/manifest.json`の15行目が以下のようになっていませんか？
+```json
+"client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com"
+```
+
+これはプレースホルダーです。**実際のクライアントID**（ステップ1-4で取得した値）に置き換える必要があります。
+
+正しい例：
+```json
+"client_id": "1234567890-abcdefghijklmnopqrstuvwxyz123456.apps.googleusercontent.com"
+```
+
+詳細な解決方法は **[extension/TROUBLESHOOTING.md](extension/TROUBLESHOOTING.md)** を参照してください。
+
 ### 認証エラーが出る
 → `manifest.json`のclient_IDを確認
 
@@ -75,6 +93,9 @@
 
 ### 設定を変更したい
 → ポップアップで各種設定を調整できます
+
+### すべてのエラーと解決方法
+→ **[extension/TROUBLESHOOTING.md](extension/TROUBLESHOOTING.md)** をご覧ください
 
 ---
 
