@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打ち合わせ候補日時生成</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>打ち合わせ候補日時生成</h1>
+
+    <div class="settings">
+      <div class="setting-item">
+        <label for="candidateCount">候補数:</label>
+        <input type="number" id="candidateCount" min="1" max="10" value="5">
+      </div>
+
+      <div class="setting-item">
+        <label for="meetingDuration">会議時間:</label>
+        <select id="meetingDuration">
+          <option value="30">30分</option>
+          <option value="60" selected>60分</option>
+          <option value="90">90分</option>
+        </select>
+      </div>
+
+      <div class="setting-item">
+        <label for="startTime">抽出開始時間:</label>
+        <input type="time" id="startTime" value="09:00">
+      </div>
+
+      <div class="setting-item">
+        <label for="endTime">抽出終了時間:</label>
+        <input type="time" id="endTime" value="18:00">
+      </div>
+
+      <div class="setting-item">
+        <label>曜日:</label>
+        <div class="weekday-checkboxes">
+          <label><input type="checkbox" id="weekday-mon" value="1" checked> 月</label>
+          <label><input type="checkbox" id="weekday-tue" value="2" checked> 火</label>
+          <label><input type="checkbox" id="weekday-wed" value="3" checked> 水</label>
+          <label><input type="checkbox" id="weekday-thu" value="4" checked> 木</label>
+          <label><input type="checkbox" id="weekday-fri" value="5" checked> 金</label>
+          <label><input type="checkbox" id="weekday-sat" value="6"> 土</label>
+          <label><input type="checkbox" id="weekday-sun" value="0"> 日</label>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label for="searchDays">検索期間（日数）:</label>
+        <input type="number" id="searchDays" min="1" max="30" value="7">
+      </div>
+    </div>
+
+    <button id="generateBtn" class="generate-btn">候補を生成</button>
+
+    <div id="status" class="status"></div>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="calendar.js"></script>
+  <script src="slot-generator.js"></script>
+  <script src="formatter.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
