@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "打ち合わせ候補日時生成",
+  "version": "1.0.0",
+  "description": "Googleカレンダーの予定から空き時間を計算し、打ち合わせ候補日時を生成する拡張機能",
+  "permissions": [
+    "identity",
+    "storage",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://www.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "448981197112-im5jivfdl0rnhoio86qrjlp04odu3fgc.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.readonly"
+    ]
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
