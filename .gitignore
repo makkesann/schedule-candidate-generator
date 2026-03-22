@@ -27,5 +27,8 @@ tmp/
 temp/
 *.tmp
 
+# Secrets
+.env
+
 # Chrome extension development
 *.pem
